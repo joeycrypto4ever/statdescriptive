@@ -1,25 +1,30 @@
-// src/components/resultats/ResultHeader.tsx
 'use client';
 
 import { AnalysisResult } from '@/types/statistics';
 import { TYPE_LABELS } from '@/lib/utils/constants';
 import { FlaskConical, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { useAnalysisContext } from '@/context/AnalysisContext';
 
 interface ResultHeaderProps {
   result: AnalysisResult;
 }
 
 export default function ResultHeader({ result }: ResultHeaderProps) {
+  const { dispatch } = useAnalysisContext();
+
+  const handleReset = () => {
+    dispatch({ type: 'RESET' });
+  };
+
   return (
     <div className="result-header">
       <div className="result-header-top">
-        <Link href="/analyse" className="btn btn-ghost">
+        <button onClick={handleReset} className="btn btn-ghost">
           <ArrowLeft size={18} /> Retour
-        </Link>
-        <Link href="/analyse" className="btn btn-primary">
+        </button>
+        <button onClick={handleReset} className="btn btn-primary">
           <FlaskConical size={18} /> Nouvelle analyse
-        </Link>
+        </button>
       </div>
       <div className="result-header-info">
         <h1 className="result-title">Résultats de l&apos;analyse</h1>

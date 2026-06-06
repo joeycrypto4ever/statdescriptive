@@ -14,7 +14,7 @@ export async function parseFile(file: File): Promise<ParsedData> {
   }
 
   if (extension === 'xlsx' || extension === 'xls') {
-    const XLSX = (await import('xlsx')).default;
+    const XLSX = await import('xlsx');
     const buffer = await file.arrayBuffer();
     const workbook = XLSX.read(buffer, { type: 'array' });
     const sheetName = workbook.SheetNames[0];
