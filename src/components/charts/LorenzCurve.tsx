@@ -40,8 +40,8 @@ export default function LorenzCurve({ concentration, title }: LorenzCurveProps) 
             label={{ value: 'Gi (masses cumulées)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }}
           />
           <Tooltip
-            formatter={(value: number, name: string) => [
-              value.toFixed(4),
+            formatter={(value, name) => [
+              Number(value).toFixed(4),
               name === 'egalite' ? 'Diagonale d\'égalité' : 'Courbe de Lorenz',
             ]}
           />

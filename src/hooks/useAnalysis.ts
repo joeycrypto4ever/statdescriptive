@@ -241,6 +241,7 @@ function analyzeEgales(data: import('@/types/analysis').ParsedData, variable: st
   }
 
   // Raw numeric → generate classes
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { generateClasses } = require('@/lib/parsers/classParser');
   const numericValues = items.flatMap(i => {
     const v = Number(i.modalite.replace(',', '.'));

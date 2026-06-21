@@ -22,7 +22,7 @@ export default function StatBarChart({ rows, title }: BarChartProps) {
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis dataKey="name" angle={-30} textAnchor="end" fontSize={12} />
           <YAxis label={{ value: 'Effectif (ni)', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
-          <Tooltip formatter={(value: number) => [value, 'Effectif']} />
+          <Tooltip formatter={(value) => [value, 'Effectif']} />
           <Bar dataKey="ni" radius={[6, 6, 0, 0]}>
             {data.map((_, i) => (
               <Cell key={i} fill={COLORS[i % COLORS.length]} />

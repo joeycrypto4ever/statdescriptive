@@ -419,3 +419,9 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); line
   .result-tabs { overflow-x: auto; }
 }
 
+
+/* Icône ? d'aide à côté du titre "Saisie CSV" */
+.csv-input-header h3 { flex: 0 0 auto; }
+.csv-help-link { display: inline-flex; align-items: center; color: #94a3b8; transition: color .15s ease; }
+.csv-help-link:hover { color: #6366f1; }
+.csv-input-header .btn { margin-left: auto; }

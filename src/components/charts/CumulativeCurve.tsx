@@ -39,7 +39,7 @@ export default function CumulativeCurve({ rows, mediane, Q1, Q3, title }: Cumula
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis dataKey="x" label={{ value: isClass ? 'Borne supérieure' : 'xi', position: 'bottom', style: { fontSize: 12 } }} />
           <YAxis domain={[0, 1]} label={{ value: 'Ficc', angle: -90, position: 'insideLeft', style: { fontSize: 12 } }} />
-          <Tooltip formatter={(value: number) => [value.toFixed(4), 'Ficc']} />
+          <Tooltip formatter={(value) => [Number(value).toFixed(4), 'Ficc']} />
           <ReferenceLine y={0.5} stroke="#ef4444" strokeDasharray="5 5" label={{ value: 'Me (0,5)', fill: '#ef4444', fontSize: 11 }} />
           {Q1 !== null && Q1 !== undefined && (
             <ReferenceLine y={0.25} stroke="#f97316" strokeDasharray="3 3" label={{ value: 'Q1', fill: '#f97316', fontSize: 10 }} />

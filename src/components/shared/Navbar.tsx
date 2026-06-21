@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart3, Home, BookOpen, FlaskConical } from 'lucide-react';
+import { BarChart3, Home, BookOpen, FlaskConical, HelpCircle } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -14,6 +14,7 @@ export default function Navbar() {
     { href: '/pedagogie/types-statistiques', label: 'Types', icon: BookOpen },
     { href: '/pedagogie/calculs-detailles', label: 'Calculs', icon: BarChart3 },
     { href: '/pedagogie/graphiques-interactifs', label: 'Graphiques', icon: BarChart3 },
+    { href: '/guide', label: 'Guide', icon: HelpCircle },
   ];
 
   return (

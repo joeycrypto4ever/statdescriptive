@@ -28,7 +28,7 @@ export default function StatPieChart({ rows, title }: PieChartProps) {
             cx="50%" cy="50%"
             outerRadius={130}
             dataKey="value"
-            label={({ name, percent }) => `${name} (${(percent * 100).toFixed(1)}%)`}
+            label={({ name, percent }) => `${name} (${((percent ?? 0) * 100).toFixed(1)}%)`}
             labelLine={true}
             fontSize={11}
           >
@@ -36,7 +36,7 @@ export default function StatPieChart({ rows, title }: PieChartProps) {
               <Cell key={i} fill={COLORS[i % COLORS.length]} />
             ))}
           </Pie>
-          <Tooltip formatter={(value: number, name: string) => [value, name]} />
+          <Tooltip formatter={(value, name) => [value, name]} />
           <Legend />
         </RechartsPie>
       </ResponsiveContainer>

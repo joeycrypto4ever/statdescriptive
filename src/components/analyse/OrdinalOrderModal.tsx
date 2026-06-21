@@ -19,11 +19,13 @@ export default function OrdinalOrderModal({ isOpen, onClose, modalites, onConfir
   useEffect(() => {
     // Try to auto-detect
     const detected = detectOrdinalScale(modalites);
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (detected) {
       setOrder(detected);
     } else {
       setOrder([...modalites]);
     }
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, [modalites]);
 
   const moveUp = (i: number) => {
